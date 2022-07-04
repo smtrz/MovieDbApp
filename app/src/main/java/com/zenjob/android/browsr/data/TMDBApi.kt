@@ -6,12 +6,12 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface TMDBApi {
-    @GET("movie/popular")
-    fun getPopularTvShows(
-        @Query("language") query: String? = null,
-        @Query("page") page: Int? = null
-    ): Single<PaginatedListResponse<Movie>>
-
+//    @GET("movie/popular")
+//    fun getPopularTvShows(
+//        @Query("language") query: String? = null,
+//        @Query("page") page: Int? = null
+//    ): Single<PaginatedListResponse<Movie>>
+//
 
     @GET("movie/{movie_id}")
     fun getDetails(
