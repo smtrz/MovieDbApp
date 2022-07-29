@@ -36,7 +36,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-}
+  }
+
 
 dependencies {
 
@@ -70,5 +71,7 @@ dependencies {
     // android test implementations
     androidTestImplementation android_testing.values()
 
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC3'
+    testImplementation 'net.bytebuddy:byte-buddy-agent:1.10.19'
 
 }

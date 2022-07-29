@@ -1,7 +1,7 @@
 package com.zenjob.android.browsr.repo
 
+import com.zenjob.android.browsr.data.MovieDetails
 import com.zenjob.android.browsr.data.PaginatedListResponse
-import com.zenjob.android.browsr.data.movie_details.MovieDetails
 import com.zenjob.android.browsr.generics.BaseApiResponse
 import com.zenjob.android.browsr.generics.NetworkResult
 import dagger.hilt.android.scopes.ActivityRetainedScoped

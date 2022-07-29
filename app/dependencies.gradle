@@ -11,7 +11,7 @@ final activity_version = "1.1.0"
 final paging = "3.1.1"
 
 ext {
-    //Dependencies of Network Libs
+    //Dependencies of Network
     networkDependencies = [
             retrofit             : "com.squareup.retrofit2:retrofit:${RetrofitVersion}",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${RetrofitVersion}",
@@ -87,18 +87,20 @@ ext {
     ]
 
     testing = [
-            roomTest: "androidx.room:room-testing:$roomVersion",
-            junit   : "junit:junit:4.13.1",
-            mockito : "org.mockito:mockito-inline:2.22.0",
-            jupiter : 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+            roomTest      : "androidx.room:room-testing:$roomVersion",
+            junit         : "junit:junit:4.13.2",
+            coroutine_test: "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2",
+            coreTest      : "androidx.arch.core:core-testing:2.1.0"
 
 
     ]
     android_testing = [
-            coreTest   : "androidx.arch.core:core-testing:2.1.0",
-            test_runner: "androidx.test:runner:1.4.0",
-            test_rules : "androidx.test:rules:1.4.0"
+            coreTest      : "androidx.arch.core:core-testing:2.1.0",
+            test_runner   : "androidx.test:runner:1.4.0",
+            test_rules    : "androidx.test:rules:1.4.0",
+            mockito_inline: "org.mockito:mockito-inline:3.11.2"
 
+          //  testImplementation 'org.mockito:mockito-inline:2.8.47'
 
     ]
 

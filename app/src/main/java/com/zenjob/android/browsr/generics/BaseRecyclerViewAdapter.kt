@@ -5,16 +5,15 @@ import android.os.Looper
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-
+/** Abstract with methods to handle recyclerview */
 abstract class BaseRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-   private var list: ArrayList<T>? = ArrayList<T>()
+    private var list: ArrayList<T>? = ArrayList<T>()
     protected lateinit var itemClickListener: OnItemClickListener<T>
 
     fun addItems(items: List<T>) {
         this.list?.addAll(items)
         reload()
     }
-
 
     fun addItem(items: T) {
         this.list?.add(items)
@@ -29,7 +28,6 @@ abstract class BaseRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerView.Vi
     fun getItem(position: Int): T? {
         return this.list?.get(position)
     }
-
 
     open fun getPosition(item: T): Int {
         if (list!!.size == 0) return -1
@@ -75,9 +73,7 @@ abstract class BaseRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerView.Vi
         reload()
     }
 
-
     interface OnItemClickListener<T> {
         fun onItemClick(listitem: T, position: Int, view: View?)
     }
-
 }

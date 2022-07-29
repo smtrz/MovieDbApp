@@ -6,7 +6,7 @@
 
         <variable
             name="movie_details"
-            type="com.zenjob.android.browsr.data.movie_details.MovieDetails" />
+            type="com.zenjob.android.browsr.data.MovieDetails" />
 
         <variable
             name="pmvm"
