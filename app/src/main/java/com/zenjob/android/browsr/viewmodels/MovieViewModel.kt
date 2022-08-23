@@ -3,13 +3,21 @@ package com.zenjob.android.browsr.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.zenjob.android.browsr.data.Movie
 import com.zenjob.android.browsr.data.PaginatedListResponse
 import com.zenjob.android.browsr.data.MovieDetails
 import com.zenjob.android.browsr.generics.NetworkResult
+import com.zenjob.android.browsr.paging_source.MoviesPagingSource
 import com.zenjob.android.browsr.repo.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
@@ -37,6 +45,11 @@ class MovieViewModel @Inject constructor(private val repository: Repository) : V
                 .collect()
         }
     }
+
+    val Movies: Flow<PagingData<Movie>> =
+        Pager(config = PagingConfig(pageSize = 10),
+            pagingSourceFactory = { MoviesPagingSource(repository) }
+        ).flow.cachedIn(viewModelScope)
 
     /** Method to fetch movie details from the server based on the id */
     fun fetchMovieDetails(movieId: Long, lang: String) {

@@ -8,6 +8,12 @@ open class RemoteDataSource @Inject constructor(private val movieService: Movies
     suspend fun getPopularMovies(lang: String, page: Int) =
         movieService.getPopularTvShows(lang, page)
 
+    suspend fun getPaginatedMovies(lang: String, page: Int) =
+        movieService.getPaginatedMovies(lang, page)
+
+
+
+
     suspend fun getMovieDetails(movieId: Long, lang: String) =
         movieService.getDetails(movieId, lang)
 }

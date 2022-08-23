@@ -23,6 +23,16 @@ class Repository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
+
+    suspend fun getPaginatedMovies(lang: String, page: Int): PaginatedListResponse {
+        return remoteDataSource.getPaginatedMovies(lang, page)
+
+    }
+
+
+
+
+
     suspend fun getMovieDetails(movieId: Long, lang: String): Flow<NetworkResult<MovieDetails>> {
         return flow {
             emit(NetworkResult.Loading())

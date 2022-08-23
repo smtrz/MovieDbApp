@@ -3,6 +3,7 @@ package com.zenjob.android.browsr.modules
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zenjob.android.browsr.adapters.MoviesAdapter
+import com.zenjob.android.browsr.adapters.MoviesAdapterPaginated
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +18,10 @@ class AppModule {
     @Provides
     @Singleton
     fun provideAdapter(): MoviesAdapter = MoviesAdapter()
+
+    @Provides
+    @Singleton
+    fun providePaginatedMovieAdapter(): MoviesAdapterPaginated = MoviesAdapterPaginated()
 
 
 }
