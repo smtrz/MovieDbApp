@@ -24,8 +24,9 @@ This app is designed using android's Jetpack components such as :
 - orientation independent
 
 # Further improvements
-- Adding paging 3 Library for pagination
-- Adding UI tests and further instrument tests for movie list
+- Adding paging 3 Unit tests
+- Adding UI tests using Espresso
+- moving the UI to jetpack compose and navigation component.
 
 ### Tech
 This app uses a number of open source projects Libraries and frameworks:
